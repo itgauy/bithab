@@ -1,47 +1,49 @@
-import React from 'react';
+import React from 'react'
 
-// Sample data representing contributions for each day of the week
-const contributionsData = [
-  { day: 1, count: 0 },
-  { day: 2, count: 1 },
-  { day: 3, count: 2 },
-  { day: 4, count: 3 },
-  { day: 5, count: 5 },
-  { day: 6, count: 2 },
-  { day: 7, count: 4 },
-  { day: 8, count: 4 },
-  { day: 9, count: 0 },
-  { day: 10, count: 1 },
-  { day: 11, count: 1 },
-  { day: 12, count: 1 },
-  { day: 13, count: 1 },
-  { day: 14, count: 1 },
-  { day: 15, count: 1 },
-  { day: 16, count: 1 },
-  { day: 17, count: 1 },
-
-];
-
-const getColor = (count) => {
-  if (count === 0) return '#ebedf0'; // No contributions
-  if (count < 2) return '#c6e48b'; // Low contributions
-  if (count < 5) return '#7bc96f'; // Medium contributions
-  return '#239a3b'; // High contributions
-};
+import { useEffect } from 'react';
 
 const ContGraph = () => {
-  return (
-    <div className="container">
-      {contributionsData.map((contribution, index) => (
-        <div
-          key={index}
-          className="contribs"
-          style={{ backgroundColor: getColor(contribution.count) }}
-          title={`Contributions: ${contribution.count}`}
-        />
-      ))}
-    </div>
-  );
-};
+  useEffect(() => {
+    const squares = document.querySelector('.squares');
+    squares.innerHTML = ''; // clear squares kasi nag bebeyond 365 siya dunno why
+    for (var i = 1; i < 365; i++) {
+      const level = Math.floor(Math.random() * 3);
+      squares.insertAdjacentHTML('beforeend', `<li data-level="${level}"></li>`);
+    }
+  }, []);
 
-export default ContGraph;
+  return (
+    <>
+      <div class="graph">
+        <ul class="months">
+          <li>Jan</li>
+          <li>Feb</li>
+          <li>Mar</li>
+          <li>Apr</li>
+          <li>May</li>
+          <li>Jun</li>
+          <li>Jul</li>
+          <li>Aug</li>
+          <li>Sep</li>
+          <li>Oct</li>
+          <li>Nov</li>
+          <li>Dec</li>
+        </ul>
+        <ul class="days">
+          <li>Sun</li>
+          <li>Mon</li>
+          <li>Tue</li>
+          <li>Wed</li>
+          <li>Thu</li>
+          <li>Fri</li>
+          <li>Sat</li>
+        </ul>
+        <ul class="squares">
+          {/* added via js */}
+        </ul>
+      </div>
+    </>
+  )
+}
+
+export default ContGraph

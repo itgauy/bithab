@@ -2,11 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-/* CONTRIBUTION GRAPH */
+/* START - CONTRIBUTION GRAPH */
 
 .container {
   @apply bg-white p-4 m-10 mx-auto border border-gray-300 rounded-xl grid grid-cols-12 grid-rows-7 gap-3 md:gap-4;
   @apply max-w-sm md:max-w-lg lg:max-w-3xl 2xl:max-w-4xl;
+  overflow-x: auto;
+  white-space: nowrap;
   grid-auto-flow: column;
 }
 
@@ -15,7 +17,7 @@
   @apply md:h-8 md:w-8 md:rounded-lg;
 }
 
-/* // CONTRIBUTION GRAPH  */
+/* END - CONTRIBUTION GRAPH  */
 
 
 /* .container {
