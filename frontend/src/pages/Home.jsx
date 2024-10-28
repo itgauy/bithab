@@ -5,7 +5,7 @@ const Home = () => {
   return (
     <>
       <div className="pt-40 border border-red-100 text-center">{/* SPACER */}</div>
-      <div className="text-center">Hi</div>
+      <div className="text-center text-red-500">Hi</div>
       <ContGraph />
       {/* <div style={{ height: '200vh' }}></div> */}
     </>

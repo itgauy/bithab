@@ -1,8 +1,9 @@
 import React from 'react'
 
-import { useEffect } from 'react';
+import { useEffect } from 'react'
 
 const ContGraph = () => {
+
   useEffect(() => {
     const squares = document.querySelector('.squares');
     squares.innerHTML = ''; // clear squares kasi nag bebeyond 365 siya dunno why
@@ -12,37 +13,36 @@ const ContGraph = () => {
     }
   }, []);
 
+
   return (
-    <>
-      <div class="graph">
-        <ul class="months">
-          <li>Jan</li>
-          <li>Feb</li>
-          <li>Mar</li>
-          <li>Apr</li>
-          <li>May</li>
-          <li>Jun</li>
-          <li>Jul</li>
-          <li>Aug</li>
-          <li>Sep</li>
-          <li>Oct</li>
-          <li>Nov</li>
-          <li>Dec</li>
-        </ul>
-        <ul class="days">
-          <li>Sun</li>
-          <li>Mon</li>
-          <li>Tue</li>
-          <li>Wed</li>
-          <li>Thu</li>
-          <li>Fri</li>
-          <li>Sat</li>
-        </ul>
-        <ul class="squares">
-          {/* added via js */}
-        </ul>
-      </div>
-    </>
+    <div className="graph">
+      <ul className="months">
+        <li>Jan</li>
+        <li>Feb</li>
+        <li>Mar</li>
+        <li>Apr</li>
+        <li>May</li>
+        <li>Jun</li>
+        <li>Jul</li>
+        <li>Aug</li>
+        <li>Sep</li>
+        <li>Oct</li>
+        <li>Nov</li>
+        <li>Dec</li>
+      </ul>
+      <ul className="days">
+        <li>Sun</li>
+        <li>Mon</li>
+        <li>Tue</li>
+        <li>Wed</li>
+        <li>Thu</li>
+        <li>Fri</li>
+        <li>Sat</li>
+      </ul>
+      <ul className="squares">
+        {/* tba */}
+      </ul>
+    </div>
   )
 }
 
